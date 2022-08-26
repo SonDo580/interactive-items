@@ -1,57 +1,125 @@
 .dropdown {
-    width: 200px;
-    position: relative;
+  width: 200px;
+  position: relative;
 }
 
 .dropdown-items {
-    display: none;
-    border: 2px solid black;
-    border-top: none;
-    margin-top: 0;
-    list-style: none;
-    padding-left: 0;
+  display: none;
+  border: 2px solid black;
+  border-top: none;
+  margin-top: 0;
+  list-style: none;
+  padding-left: 0;
 }
 
 .dropdown-items.show {
-    display: block;
+  display: block;
 }
 
 .dropdown-items li {
-    padding: 5px;
-    border-bottom: 1px solid gray;
+  padding: 5px;
+  border-bottom: 1px solid gray;
 }
 
 .dropdown-items li {
-    padding: 5px 10px;
-    border-bottom: 1px solid gray;
+  padding: 5px 10px;
+  border-bottom: 1px solid gray;
 }
 
 .dropdown-items li:last-child {
-    border-bottom: none;
+  border-bottom: none;
 }
 
 .dropdown-trigger {
-    border: 2px solid blue;
-    padding: 5px 10px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: blue;
-    margin-bottom: 0;
+  border: 2px solid blue;
+  padding: 5px 10px;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: blue;
+  margin-bottom: 0;
 }
 
 .dropdown-trigger:hover {
-    cursor: pointer;
+  cursor: pointer;
 }
 
 .dropdown i {
-    position: absolute;
-    right: 10px;
-    top: 10px;
-    transform: rotate(-180deg);
-    transition: transform 200ms ease-in-out;
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  transform: rotate(-180deg);
+  transition: transform 200ms ease-in-out;
 }
 
 .dropdown i.show {
-    transform: rotate(0deg);
+  transform: rotate(0deg);
+}
+
+/* IMAGE SLIDER */
+.container {
+  height: 70vh;
+  position: relative;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.images {
+  height: 85%;
+  width: 45vw;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  display: none;
+}
+
+img.active {
+    display: block;
+}
+
+.arrows i {
+  font-size: 4rem;
+  color: white;
+}
+
+.arrows i:hover {
+  cursor: pointer;
+  color: cyan;
+}
+
+.arrows .left {
+  position: absolute;
+  top: 25vh;
+  left: 18vw;
+}
+
+.arrows .right {
+    position: absolute;
+  top: 25vh;
+  right: 18vw;
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: white;
+}
+
+.dot:hover {
+    cursor: pointer;
+    background-color: cyan;
+}
+
+.dot.active {
+    background-color: cornflowerblue;
 }
