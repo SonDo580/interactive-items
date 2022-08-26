@@ -35,5 +35,51 @@ function showImage(event) {
   activeImage.classList.add("active");
 }
 
-const leftArrow = document.querySelector("arrows .left");
-const rightArrow = document.querySelector("arrows .right");
+const leftArrow = document.querySelector(".arrows .left");
+const rightArrow = document.querySelector(".arrows .right");
+
+leftArrow.addEventListener("click", showPreviousImage);
+
+function showPreviousImage() {
+  const currentImage = document.querySelector("img.active");
+  currentImage.classList.remove("active");
+  const currentIndex = currentImage.getAttribute("data-index");
+  let activeIndex = 0;
+  if (currentIndex === "1") {
+    activeIndex = "3";
+  } else {
+    activeIndex = (Number(currentIndex) - 1).toString();
+  }
+  const activeImage = document.querySelector(
+    `img[data-index="${activeIndex}"]`
+  );
+  activeImage.classList.add("active");
+
+  const currentDot = document.querySelector(".dot.active");
+  currentDot.classList.remove("active");
+  const activeDot = document.querySelector(`.dot[data-index="${activeIndex}"]`);
+  activeDot.classList.add("active");
+}
+
+rightArrow.addEventListener("click", showNextImage);
+
+function showNextImage() {
+  const currentImage = document.querySelector("img.active");
+  currentImage.classList.remove("active");
+  const currentIndex = currentImage.getAttribute("data-index");
+  let activeIndex = 0;
+  if (currentIndex === "3") {
+    activeIndex = "1";
+  } else {
+    activeIndex = (Number(currentIndex) + 1).toString();
+  }
+  const activeImage = document.querySelector(
+    `img[data-index="${activeIndex}"]`
+  );
+  activeImage.classList.add("active");
+
+  const currentDot = document.querySelector(".dot.active");
+  currentDot.classList.remove("active");
+  const activeDot = document.querySelector(`.dot[data-index="${activeIndex}"]`);
+  activeDot.classList.add("active");
+}
