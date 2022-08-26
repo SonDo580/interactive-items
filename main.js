@@ -83,3 +83,5 @@ function showNextImage() {
   const activeDot = document.querySelector(`.dot[data-index="${activeIndex}"]`);
   activeDot.classList.add("active");
 }
+
+setInterval(showNextImage, 2000);
